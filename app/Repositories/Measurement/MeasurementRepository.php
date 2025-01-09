@@ -9,11 +9,11 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Exceptions\RepositoryException;
 
 /**
- * Class IngredientInvoiceRepository.
+ * Class MeasurementRepository.
  *
- * @package namespace App\Repositories\User;
+ * @package namespace App\Repositories\Measurement;
  */
-class MeasurementRepository extends BaseRepository implements MeasurmentRepositoryInterface
+class MeasurementRepository extends BaseRepository implements MeasurementRepositoryInterface
 {
     /**
      * Specify Model class name

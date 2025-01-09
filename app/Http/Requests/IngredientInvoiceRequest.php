@@ -30,10 +30,11 @@ class IngredientInvoiceRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'Nomi kiritilishi shart.',
-            'name.max' => 'Nom 50 belgidan oshmasligi kerak.',
-            'status.required' => 'Status tanlash shart.',
-            'status.in' => 'Status noto‘g‘ri qiymatda.',
+            'name.required' => 'Name is required.',
+            'name.max' => 'Name must not exceed 50 characters.',
+            'status.required' => 'Status is required.',
+            'status.in' => 'Status has an invalid value.',
         ];
     }
+
 }

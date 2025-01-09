@@ -54,7 +54,7 @@ class IngredientController extends ApiController
             return $this->successResponse([],Response::HTTP_NO_CONTENT);
         }
 
-        return $this->errorResponse('No deleting',500);
+        return $this->errorResponse('No deleting',Response::HTTP_INTERNAL_SERVER_ERROR);
 
     }
 

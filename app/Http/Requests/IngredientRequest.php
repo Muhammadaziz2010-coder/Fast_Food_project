@@ -25,13 +25,14 @@ class IngredientRequest extends FormRequest
     public function messages()
     {
         return [
-            'measurement_id.required' => 'O‘lchov birligi talab qilinadi.',
-            'measurement_id.exists' => 'Tanlangan o‘lchov birligi noto‘g‘ri.',
-            'name.required' => 'Nomini kiritish talab qilinadi.',
-            'quantity.required' => 'Miqdori kiritish talab qilinadi.',
-            'price.required' => 'Narxni kiritish talab qilinadi.',
-            'expiration_date.after_or_equal' => 'Yaroqlilik muddati bugundan keyin bo‘lishi kerak.',
+            'measurement_id.required' => 'Measurement unit is required.',
+            'measurement_id.exists' => 'The selected measurement unit is invalid.',
+            'name.required' => 'Name is required.',
+            'quantity.required' => 'Quantity is required.',
+            'price.required' => 'Price is required.',
+            'expiration_date.after_or_equal' => 'Expiration date must be after or equal to today.',
         ];
     }
+
 }
 

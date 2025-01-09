@@ -30,18 +30,17 @@ class StockMovementRequest extends FormRequest
             default => []
         };
     }
-
     public function messages(): array
     {
         return [
-            'ingredient_id.required' => 'Ingredient tanlash shart.',
-            'ingredient_id.exists' => 'Tanlangan ingredient mavjud emas.',
-            'type.required' => 'Tur tanlash shart.',
-            'type.in' => 'Noto‘g‘ri tur qiymati.',
-            'quantity.required' => 'Miqdor kiritilishi shart.',
-            'quantity.integer' => 'Miqdor butun son bo‘lishi kerak.',
-            'quantity.min' => 'Miqdor kamida 1 bo‘lishi kerak.',
-            'description.string' => 'Tavsif matn bo‘lishi kerak.',
+            'ingredient_id.required' => 'Selecting an ingredient is required.',
+            'ingredient_id.exists' => 'The selected ingredient does not exist.',
+            'type.required' => 'Selecting a type is required.',
+            'type.in' => 'Invalid type value.',
+            'quantity.required' => 'Quantity is required.',
+            'quantity.integer' => 'Quantity must be an integer.',
+            'quantity.min' => 'Quantity must be at least 1.',
+            'description.string' => 'Description must be a string.',
         ];
     }
 

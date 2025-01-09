@@ -22,16 +22,18 @@ class MeasurementRequest extends FormRequest
     public function rules(): array
     {
 
-        $measurements = $this->route('measurement');
-
-        return match ($this->route()?->getName()) {
-            'measurements.store' =>   [
-                'name' => 'required|string|max:100|min:3|unique:measurements,name',
-            ],
-            'measurements.update' =>   [
-                'name' => 'required|string|max:100|min:3|unique:measurements,name,' . $measurement->id,
-
-            ]
-        };
+        return
+            [
+                'name' => ['required', 'string', 'max:15'],
+            ];
+    }
+    /**
+     * Get the validation error messages that apply to the request.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [];
     }
 }

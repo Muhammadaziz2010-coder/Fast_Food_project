@@ -9,15 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('measurements', function (Blueprint $table) {
+
+        Schema::create('measurements', static function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name', 50)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
-
     /**
      * Reverse the migrations.
      */

@@ -27,10 +27,10 @@ class IngredientInvoiceService extends BaseService
     }
 
 
-    public function show(IngredientInvoice $supplier): array
+    public function show(IngredientInvoice $ingredient): array
     {
         $fractal = new Manager();
-        $resource = new Item($supplier, new IngredientInvoiceTransformer());
+        $resource = new Item($ingredient, new IngredientInvoiceTransformer());
 
         return $this->formatData($fractal->createData($resource)->toArray(),'ingredient_invoice');
     }
@@ -42,26 +42,26 @@ class IngredientInvoiceService extends BaseService
     public function create($data): array
     {
 
-        $supplier =  $this->repository->skipPresenter()->create($data);
+        $ingredient =  $this->repository->skipPresenter()->create($data);
 
-        $supplier->refresh();
-        return $this->show($supplier);
+        $ingredient->refresh();
+        return $this->show($ingredient);
     }
 
 
     /**
      * @throws ValidatorException
      */
-    public function update(IngredientInvoice $supplier, $data): array
+    public function update(IngredientInvoice $ingredient, $data): array
     {
-        $updated_data = $this->repository->skipPresenter()->update($data,$supplier->id);
+        $updated_data = $this->repository->skipPresenter()->update($data,$ingredient->id);
 
         return $this->show($updated_data);
     }
 
-    public function delete(IngredientInvoice $supplier)
+    public function delete(IngredientInvoice $ingredient)
     {
-        return $supplier->delete();
+        return $ingredient->delete();
     }
 
 
