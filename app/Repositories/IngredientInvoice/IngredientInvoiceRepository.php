@@ -11,7 +11,7 @@ use Prettus\Repository\Exceptions\RepositoryException;
 /**
  * Class IngredientInvoiceRepository.
  *
- * @package namespace App\Repositories\User;
+ * @package namespace App\Repositories\Ingredien;
  */
 class IngredientInvoiceRepository extends BaseRepository implements IngredientInvoiceRepositoryInterface
 {

@@ -3,20 +3,32 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Measurement extends Model
+
+class Measurement extends Authenticatable
 {
-    use HasFactory;
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasApiTokens, Notifiable,SoftDeletes;
 
     protected $table = 'measurements';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'name',
     ];
 
-    public function ingredients()
+    public function Ingredient(): BelongsTo
     {
-        return $this->hasMany(Ingredient::class);
+        return $this->belongsTo(Ingredient::class);
     }
+
 }

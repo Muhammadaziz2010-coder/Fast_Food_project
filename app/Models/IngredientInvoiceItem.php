@@ -16,7 +16,6 @@ class IngredientInvoiceItem extends Model
         'price',
     ];
 
-    // Aloqalar
     public function invoice()
     {
         return $this->belongsTo(IngredientInvoice::class);

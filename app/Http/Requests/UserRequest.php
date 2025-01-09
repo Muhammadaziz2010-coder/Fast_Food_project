@@ -50,23 +50,22 @@ class UserRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'Ismni kiritish majburiy.',
-            'name.string' => 'Ism faqat matn bo\'lishi kerak.',
-            'name.max' => 'Ism maksimal :max belgidan iborat bo\'lishi mumkin.',
+            'name.required' => 'Name is required.',
+            'name.string' => 'Name must be a string.',
+            'name.max' => 'Name may not be greater than :max characters.',
 
-            'username.required' => 'Foydalanuvchi nomini kiritish majburiy.',
-            'username.string' => 'Foydalanuvchi nomi faqat matn bo\'lishi kerak.',
-            'username.min' => 'Foydalanuvchi nomi minimal :min belgidan iborat bo\'lishi kerak.',
-            'username.max' => 'Foydalanuvchi nomi maksimal :max belgidan iborat bo\'lishi mumkin.',
-            'username.unique' => 'Bu foydalanuvchi nomi allaqachon band.',
+            'username.required' => 'Username is required.',
+            'username.string' => 'Username must be a string.',
+            'username.min' => 'Username must be at least :min characters.',
+            'username.max' => 'Username may not be greater than :max characters.',
+            'username.unique' => 'This username is already taken.',
 
-            'password.required' => 'Parolni kiritish majburiy.',
-            'password.string' => 'Parol faqat matn bo\'lishi kerak.',
-            'password.min' => 'Parol minimal :min belgidan iborat bo\'lishi kerak.',
-            'password.max' => 'Parol maksimal :max belgidan iborat bo\'lishi mumkin.',
+            'password.required' => 'Password is required.',
+            'password.string' => 'Password must be a string.',
+            'password.min' => 'Password must be at least :min characters.',
+            'password.max' => 'Password may not be greater than :max characters.',
 
-            'roles.required' => 'Rollarni kiritish majburiy.',
-
+            'roles.required' => 'Roles are required.',
         ];
     }
 }

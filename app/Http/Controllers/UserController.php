@@ -55,6 +55,7 @@ class UserController extends ApiController
         $this->service->delete($user);
 
         return $this->successResponse([
+            "ok"=>true,
             "message" => "User deleted"
         ]);
     }
@@ -65,6 +66,7 @@ class UserController extends ApiController
         $this->service->forceDelete($user);
 
         return $this->successResponse([
+            "ok"=>true,
             "message" => "User has soft deleted"
         ]);
     }
