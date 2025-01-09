@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->enum('status', ['draft', 'approved', 'rejected'])->default('draft');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

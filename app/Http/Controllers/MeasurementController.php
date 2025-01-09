@@ -23,9 +23,9 @@ class MeasurementController extends ApiController
         return $this->successResponse($this->service->all());
     }
 
-    public function show(Measurement $measurements): JsonResponse
+    public function show(Measurement $measurement): JsonResponse
     {
-        return $this->successResponse($this->service->show($measurements));
+        return $this->successResponse($this->service->show($measurement));
     }
 
     public function store(MeasurementRequest $request): JsonResponse
@@ -35,32 +35,31 @@ class MeasurementController extends ApiController
             $validatedData = $request->validated();
             return $this->successResponse($this->service->create($validatedData), ResponseAlias::HTTP_CREATED);
         } catch (ValidationException $exception) {
-            // If validation fails, return the validation errors
             return $this->errorResponse('Invalid data', ResponseAlias::HTTP_UNPROCESSABLE_ENTITY, $exception->errors());
         }
     }
-    public function update(Measurement $measurements, MeasurementRequest $request): JsonResponse
+    public function update(Measurement $measurement, MeasurementRequest $request): JsonResponse
     {
         if($request->validated()){
 
-            return $this->successResponse($this->service->update($measurements,$request->validated()), ResponseAlias::HTTP_CREATED);
+            return $this->successResponse($this->service->update($measurement,$request->validated()), ResponseAlias::HTTP_CREATED);
         }
 
         return $this->errorResponse('Invalid data', ResponseAlias::HTTP_UNPROCESSABLE_ENTITY, $request->errors());
     }
 
-    public function destroy(Measurement $measurements): JsonResponse
+    public function destroy(Measurement $measurement): JsonResponse
     {
-        $this->service->delete($measurements);
+        $this->service->delete($measurement);
 
         return $this->successResponse([
             "message" => "Measurement deleted"
         ]);
     }
 
-    public function forceDelete(Measurement $measurements): JsonResponse
+    public function forceDelete(Measurement $measurement): JsonResponse
     {
-        $this->service->forceDelete($measurements);
+        $this->service->forceDelete($measurement);
 
         return $this->successResponse([
             "message" => "Measurement has been permanently deleted"

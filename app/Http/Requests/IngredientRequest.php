@@ -1,9 +1,8 @@
 <?php
-namespace App\Http\Requests;
+    namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class IngredientRequest extends FormRequest
+    use Illuminate\Foundation\Http\FormRequest;
+    class IngredientRequest extends FormRequest
 {
     public function authorize()
     {
@@ -13,12 +12,12 @@ class IngredientRequest extends FormRequest
     public function rules()
     {
         return [
-            'measurement_id' => 'required|exists:measurements,id',
-            'name' => 'required|string|max:255',
-            'quantity' => 'required|numeric|min:0.01',
-            'price' => 'required|numeric|min:0.01',
-            'expiration_date' => 'nullable|date|after_or_equal:today',
-            'description' => 'nullable|string',
+                'measurement_id' => 'required|exists:measurements,id',
+                'name' => 'required|string|max:255',
+                'quantity' => 'required|numeric|min:0.01',
+                'price' => 'required|numeric|min:0.01',
+                'expiration_date' => 'nullable|date_format:d.m.Y',
+                'description' => 'nullable|string',
         ];
     }
 
@@ -33,6 +32,4 @@ class IngredientRequest extends FormRequest
             'expiration_date.after_or_equal' => 'Expiration date must be after or equal to today.',
         ];
     }
-
 }
-

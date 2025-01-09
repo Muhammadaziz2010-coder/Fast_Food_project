@@ -4,7 +4,7 @@ namespace App\Services;
 
 
 use App\Models\Measurement;
-use App\Repositories\Measurment\IngredientInvoiceInvoiceRepository;
+use App\Repositories\Measurement\MeasurementRepository;
 use App\Transformers\MeasurementTransformer;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Log\Logger;
@@ -15,7 +15,7 @@ use Prettus\Validator\Exceptions\ValidatorException;
 
 class MeasurementService extends BaseService
 {
-    public function __construct(DatabaseManager $databaseManager, Logger $logger, IngredientInvoiceInvoiceRepository $repository)
+    public function __construct(DatabaseManager $databaseManager, Logger $logger, MeasurementRepository $repository)
     {
         parent::__construct($databaseManager, $logger, $repository);
 

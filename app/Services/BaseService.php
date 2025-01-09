@@ -86,7 +86,7 @@ abstract class BaseService
             return $result;
         } catch (Throwable $e) {
             $this->rollback($e);
-            throw $e; // или можно вернуть ошибку, если нужно
+            throw $e;
         }
     }
 
